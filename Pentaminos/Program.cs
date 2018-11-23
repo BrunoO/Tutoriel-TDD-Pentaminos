@@ -1,12 +1,10 @@
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 
 
 namespace Pentaminos
 {
-    
+
     public class Program
     {        
         static public string Description
