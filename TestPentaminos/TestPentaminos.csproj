@@ -8,8 +8,8 @@
     <ProjectGuid>{D7738D62-CB71-4F78-8BAA-162CFCD31A78}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UnitTestPentaminos</RootNamespace>
-    <AssemblyName>UnitTestPentaminos</AssemblyName>
+    <RootNamespace>TestPentaminos</RootNamespace>
+    <AssemblyName>TestPentaminos</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
