@@ -11,7 +11,7 @@ namespace TestsUnitairesPentaminos
     [TestClass]
     public class TestsPlateauAvecSolutionConnue
     {
-        private Plateau plateau;
+        private Plateau plateauConnu;
 
         private List<Pentamino> liste = FabriqueDePentaminos.ListeDePentaminos(10);
 
@@ -38,12 +38,12 @@ namespace TestsUnitairesPentaminos
         #region Additional test attributes
       
         [TestInitialize()]
-         public void MyTestInitialize()
+         public void RemplissagePlateauAvecSolutionConnue()
         {
-            plateau = new Plateau();
+            plateauConnu = new Plateau();
             foreach (int i in SolutionIndexes)
             {
-                ResultatsMethodeAjoute += plateau.Ajoute(liste[i], plateau.ProchainePositionLibre()).ToString() + " ";
+                ResultatsMethodeAjoute += plateauConnu.Ajoute(liste[i], plateauConnu.ProchainePositionLibre()).ToString() + " ";
                 ResultatsAttendus += true.ToString() + " ";
             }
         }
@@ -51,50 +51,50 @@ namespace TestsUnitairesPentaminos
         #endregion
        
         [TestMethod]
-        public void ConstructionSolutionComplete()
+        public void TousLesPentaminos_DansLePlateauConnu_SontAjoutesCorrectement() //ConstructionSolutionComplete()
         {
             Assert.AreEqual( ResultatsAttendus, ResultatsMethodeAjoute);
         }
 
         [TestMethod]
-        public void SolutionTrouvee()
+        public void SolutionTrouvee_PourLePlateauConnu_RetourneVrai()
         {
-            Assert.IsTrue( plateau.SolutionTrouvee);
+            Assert.IsTrue( plateauConnu.SolutionTrouvee);
         }
 
 
         [TestMethod]
-        public void DescriptionLigne1()
+        public void LaLigne_1_EstCorrecte() //DescriptionLigne1()
         {
-            Assert.AreEqual("VVVTTTWWFF", plateau.Lignes()[0] );
+            Assert.AreEqual("VVVTTTWWFF", plateauConnu.Lignes()[0] );
         }
 
         [TestMethod]
-        public void DescriptionLigne2()
+        public void LaLigne_2_EstCorrecte() //DescriptionLigne2()
         {
-            Assert.AreEqual("VUUUTWWFFL", plateau.Lignes()[1]);
+            Assert.AreEqual("VUUUTWWFFL", plateauConnu.Lignes()[1]);
         }
 
         [TestMethod]
-        public void DescriptionLigne3()
+        public void LaLigne_3_EstCorrecte() //DescriptionLigne3()
         {
-            Assert.AreEqual("VUZUTWPPFL", plateau.Lignes()[2]);
+            Assert.AreEqual("VUZUTWPPFL", plateauConnu.Lignes()[2]);
         }
         
         [TestMethod]
-        public void DescriptionLigne4()
+        public void LaLigne_4_EstCorrecte() //DescriptionLigne4()
         {
-            Assert.AreEqual("ZZZNNXPPPL", plateau.Lignes()[3]);
+            Assert.AreEqual("ZZZNNXPPPL", plateauConnu.Lignes()[3]);
         }
         [TestMethod]
-        public void DescriptionLigne5()
+        public void LaLigne_5_EstCorrecte() //DescriptionLigne5()
         {
-            Assert.AreEqual("ZNNNXXXYLL", plateau.Lignes()[4]);
+            Assert.AreEqual("ZNNNXXXYLL", plateauConnu.Lignes()[4]);
         }
         [TestMethod]
-        public void DescriptionLigne6()
+        public void LaLigne_6_EstCorrecte() //DescriptionLigne6()
         {
-            Assert.AreEqual("IIIIIXYYYY", plateau.Lignes()[5]);
+            Assert.AreEqual("IIIIIXYYYY", plateauConnu.Lignes()[5]);
         }
     }
 

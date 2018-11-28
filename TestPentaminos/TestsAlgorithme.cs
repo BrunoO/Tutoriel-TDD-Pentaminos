@@ -12,19 +12,14 @@ namespace TestsFonctionnelsPentaminos
     {
         private const int NombreSolutionsUniques = 2339;
 
- 
-
-        #region Additional test attributes
-         #endregion
-
         [TestMethod]
-        public void NombreDeSolutions()
+        public void ChercheSolutions_SurPlateauStandard_TrouveTotalAttendu() //NombreDeSolutions()
         {
             Algorithme algorithme = new Algorithme(new Plateau(), FabriqueDePentaminos.ListeDePentaminos(10));
             Assert.AreEqual(4 * NombreSolutionsUniques, algorithme.ChercheSolutions());
         }
         [TestMethod]
-        public void EchangeDeDimensions()
+        public void ChercheSolutions_SurPlateauInverse_TrouveTotalAttendu() //EchangeDeDimensions()
         {
             Algorithme algorithme = new Algorithme(new Plateau(10, 6), FabriqueDePentaminos.ListeDePentaminos(6));
             Assert.AreEqual(4 * NombreSolutionsUniques, algorithme.ChercheSolutions());

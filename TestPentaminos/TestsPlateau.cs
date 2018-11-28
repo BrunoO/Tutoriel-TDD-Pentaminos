@@ -4,9 +4,7 @@ using Pentaminos;
 
 namespace TestsUnitairesPentaminos
 {
-    /// <summary>
-    /// Summary description for TestsPlateau
-    /// </summary>
+
     [TestClass]
     public class TestsPlateau
     {
@@ -29,82 +27,83 @@ namespace TestsUnitairesPentaminos
 
 
         [TestMethod]
-        public void TestAjoutPentamino()
+        public void AjouterI_SurPlateauVideEnPosition1_EstPossible() //TestAjoutPentamino()
         {
             Assert.IsTrue(plateau.Ajoute(I, 1));
         }
 
         [TestMethod]
-        public void TestAjoutPentaminoSansRepetition()
+        public void AjouterI_SurPlateauContenantDejaIenPosition1_EstInterdit() //TestAjoutPentaminoSansRepetition()
         {
+            //Et ajouter I à une autre position ? surement possible, pas responsabilité de Ajoute
             plateau.Ajoute(I, 1);
             Assert.IsFalse(plateau.Ajoute(I, 1));
         }
 
         [TestMethod]
-        public void TestSolutionTrouveePlateauVide()
+        public void SolutionTrouvee_PourPlateauVide_RetourneFaux()//TestSolutionTrouveePlateauVide()
         {
             Assert.IsFalse(plateau.SolutionTrouvee);
         }
 
         [TestMethod]
-        public void PlaceLibreSurPlateauVide()
+        public void VerifierPlaceLibre_PourPlateauVide_RetourneVrai()//PlaceLibreSurPlateauVide()
         {
             Assert.IsTrue(plateau.VerifierPlaceLibre(I, 1));
         }
 
         [TestMethod]
-        public void PlaceNonLibreXapresI()
+        public void VerifierPlaceLibre_ApresAjoutSurPlace_RetourneFaux() //PlaceNonLibreXapresI()
         {
             plateau.Ajoute(I, 1);
             Assert.IsFalse( plateau.VerifierPlaceLibre(X, 1));
         }
 
         [TestMethod]
-        public void PlaceNonLibreEnFinDeLigne()
+        public void VerifierPlaceLibre_EnFinDeLigne_RetourneFaux() //PlaceNonLibreEnFinDeLigne()
         {
             Assert.IsFalse( plateau.VerifierPlaceLibre(I, 9));
         }
 
         [TestMethod]
-        public void PlaceNonLibrePourXen65()
+        public void VerifierPlaceLibrePourX_HorsPlateauEnPosition65_RetourneFaux() //PlaceNonLibrePourXen65()
         {
             Assert.IsFalse( plateau.VerifierPlaceLibre(X, 65));
         }
 
         [TestMethod]
-        public void PlaceNonLibrePourXen37()
+        public void VerifierPlaceLibrePourX_HorsPlateauEnPosition37_RetourneFaux() //PlaceNonLibrePourXen37()
         {
             Assert.IsFalse( plateau.VerifierPlaceLibre(X, 37));
         }
 
         [TestMethod]
-        public void PlaceLibrePourXen45()
+        public void VerifierPlaceLibrePourX_DansPlateauEnPosition45_RetourneVrai() //PlaceLibrePourXen45()
         {
             Assert.IsTrue( plateau.VerifierPlaceLibre(X, 45));
         }
 
         [TestMethod]
-        public void ProchainePositionPlateauVide()
+        public void ProchainePositionLibre_PourPlateauVide_Retourne1() //ProchainePositionPlateauVide()
         {
             Assert.AreEqual( 1, plateau.ProchainePositionLibre());
         }
 
         [TestMethod]
-        public void ProchainePositionPlateauApresI()
+        public void ProchainePositionLibre_PourPlateauContenantI_Retourne6() //ProchainePositionPlateauApresI()
         {
             plateau.Ajoute(I, 1);
             Assert.AreEqual( 6, plateau.ProchainePositionLibre());
         }
 
         [TestMethod]
-        public void DepassementLimites()
+        public void AjouterP_SurPlateauVide_RetourneVrai() //DepassementLimites() - ????
         {
             Assert.IsTrue(plateau.Ajoute(FabriqueDePentaminos.ListeDePentaminos(10)[62], 27));
         }
 
         [TestMethod]
-        public void PlacementVenPosition1()
+        public void VerifierPlaceLibre_ApresAjoutduI_EstCorrectePourPlusieursPositions() //PlacementVenPosition1()
         {
             plateau.Ajoute(FabriqueDePentaminos.ListeDePentaminos(10)[08], 1);
 
@@ -116,7 +115,7 @@ namespace TestsUnitairesPentaminos
         }
 
         [TestMethod]
-        public void PlacementVenPosition1viaLignes()
+        public void LesLignesDuPlateau_ApresAjoutDuVenPosition1_SontCorrectes() //PlacementVenPosition1viaLignes()
         {
             plateau.Ajoute(FabriqueDePentaminos.ListeDePentaminos(10)[08], 1);
 
@@ -126,7 +125,7 @@ namespace TestsUnitairesPentaminos
         }
 
         [TestMethod]
-        public void PlacementLenPosition5viaLignes()
+        public void LesLignesDuPlateau_ApresAjoutDuLenPosition5_SontCorrectes() //PlacementLenPosition5viaLignes()
         {
             plateau.Ajoute(FabriqueDePentaminos.ListeDePentaminos(10)[30], 5);
             Assert.AreEqual("    L     ", plateau.Lignes()[0]);
@@ -134,7 +133,7 @@ namespace TestsUnitairesPentaminos
         }
 
         [TestMethod]
-        public void AjouterPuisEnleverI()
+        public void AjouterI_ApresAjouterPuisEnlever_EstPossible() //AjouterPuisEnleverI()
         {
             plateau.Ajoute(I, 1);
             plateau.Enleve(I, 1);
@@ -142,7 +141,7 @@ namespace TestsUnitairesPentaminos
         }
 
         [TestMethod]
-        public void PositionLibreApresAjouterPuisEnleverI()
+        public void ProchainePositionLibre_ApresAjouterPuisEnlever_EstToujoursIdentique()
         {
             plateau.Ajoute(I, 1);
             int position_libre = plateau.ProchainePositionLibre();

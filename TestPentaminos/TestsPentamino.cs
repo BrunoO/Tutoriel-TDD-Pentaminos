@@ -4,24 +4,19 @@ using Pentaminos;
 
 namespace TestsUnitairesPentaminos
 {
-    /// <summary>
-    /// Summary description for TestsPentamino
-    /// </summary>
+
     [TestClass]
     public class TestsPentamino
     {
  
-        #region Additional test attributes
-        #endregion
-
         [TestMethod]
-        public void TestTotalPentaminos()
+        public void FabriqueDePentaminos_PourPlateauStandard_DoitFabriquerToutesLesVariantes() //TestTotalPentaminos()
         {
             Assert.AreEqual(FabriqueDePentaminos.ListeDePentaminos(10).Count, FabriqueDePentaminos.NombreDeVariantes);
         }
 
         [TestMethod]
-        public void TestPositionDuPentominoX()
+        public void FabriqueDePentaminos_PourPlateauStandard_DoitBienPositionnerLeX()// TestPositionDuPentominoX()
         {
             Pentamino x = FabriqueDePentaminos.ListeDePentaminos(10)[2];
 

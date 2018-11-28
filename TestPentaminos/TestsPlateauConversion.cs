@@ -3,21 +3,19 @@ using Pentaminos;
 
 namespace TestsUnitairesPentaminos
 {
-    /// <summary>
-    /// Summary description for TestsPlateauConversion
-    /// </summary>
+ 
     [TestClass]
     public class TestsPlateauConversion
     {
 
         [TestMethod]
-        public void TestPosition27DansPremierQuadrant()
+        public void LePremierCadran_DuPlateauStandard_NeContientPasLaPosition27()//TestPosition27DansPremierQuadrant()
         {
             Assert.IsFalse( (new Plateau()).EstDansPremierQuadrant(27));
         }
 
         [TestMethod]
-        public void TestPosition17DansPremierQuadrant()
+        public void LePremierCadran_DuPlateauStandard_ContientLaPosition17() //TestPosition17DansPremierQuadrant()
         {
             Assert.IsTrue( (new Plateau()).EstDansPremierQuadrant(17));
         }
